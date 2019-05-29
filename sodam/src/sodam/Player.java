@@ -1,18 +1,22 @@
 package sodam;
 
+import java.util.ArrayList;
+
 public class Player {
 	private String name;
-	private int numDarts;
+	private ArrayList<Dart> darts;
 	private int score;
+	private int numDarts;
 	
-	public Player(String name, int numDarts) {
+	public Player(String name, ArrayList<Dart> darts) {
 		this.name = name;
-		this.numDarts = numDarts;
+		this.darts = darts;
+		this.numDarts = darts.size();
 		this.score = 0;
 	}
 	
 	public boolean throwDart() {
-		if (numDarts > 0) {
+		if (darts.size() - 1 > 0) {
 			Dart currentDart = new Dart();
 			numDarts--;
 			return true;
