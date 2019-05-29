@@ -1,4 +1,4 @@
-package sodam.src.sodam;
+package sodam;
 
 public class Player {
 	private String name;

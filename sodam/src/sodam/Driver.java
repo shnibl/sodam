@@ -1,24 +1,42 @@
 package sodam;
 
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 
 public class Driver extends JFrame {
 
-	//Example constructor
+	//Images
+	private BufferedImage menuImage;
+	
+	//Driver constructor
     public Driver() {
+    	//Read images with required try and catch
+    	try {
+    		menuImage = ImageIO.read(new File("images/menu.jpg"));
+    	} catch (IOException ex) {
+    		System.out.println(ex);
+    	}
+    	
+    	//Create window
         initUI();
     }
 
     public final void initUI() {
 
-    	//Creates new panel
+       //Creates new panel
        JPanel panel = new JPanel();
        getContentPane().add(panel);
 
@@ -42,6 +60,10 @@ public class Driver extends JFrame {
           }
        });
 
+       //Add an image
+       JLabel picLabel = new JLabel(new ImageIcon(menuImage));
+       add(picLabel);
+       
        //Adds buttons to panel
        panel.add(quitButton);
        panel.add(classicMode);
