@@ -2,8 +2,10 @@ package sodam;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class KeyboardInput implements KeyListener {
+public class KeyboardInput implements ActionListener, KeyListener {
 	private static final int KEY_COUNT = 256;
 	//sets keyCount to a fixed value of 256 - 256 key limit
 	
@@ -82,6 +84,12 @@ public class KeyboardInput implements KeyListener {
 	
 	public void keyTyped( KeyEvent e ) {
 		//unneeded
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
