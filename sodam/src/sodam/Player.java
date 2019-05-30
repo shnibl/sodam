@@ -8,21 +8,18 @@ public class Player {
 	private int score;
 	private int numDarts;
 	
-	public Player(String name, ArrayList<Dart> darts) {
+	public Player(String name, int numDarts) {
+		ArrayList<Dart> darts = new ArrayList<Dart>();
 		this.name = name;
-		this.darts = darts;
-		this.numDarts = darts.size();
+		this.numDarts = numDarts;
 		this.score = 0;
 	}
 	
-	public boolean throwDart() {
-		if (darts.size() - 1 > 0) {
-			Dart currentDart = new Dart();
-			numDarts--;
-			return true;
-		} else {
-			return false;
-		}
+	public void throwDart() {
+		double newX = cursor.getX();
+		double newY = cursor.getY() * chargeBar.getCharge();
+		Dart tempDart = new Dart(newX, newY);
+		darts.add(tempDart);
 	}
 	
 	public int getScore() {
