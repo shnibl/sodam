@@ -44,28 +44,46 @@ public class KeyboardInput implements KeyListener {
 	public boolean keyDown( int keyCode ) {
 		return keys[ keyCode ] == KeyState.ONCE ||
 				keys[ keyCode ] == KeyState.PRESSED;
-	}
+	}//return true if key is down
 	
 	public boolean keyDownOnce( int keyCode ) {
 		return keys[ keyCode ] == KeyState.ONCE;
-	}
+	}//check if key was pushed down this frame, but not last frame
 	
 	public synchronized void keyPressed ( KeyEvent e ) {
 		int keyCode = e.getKeyCode();
 		if( keyCode >= 0 && keyCode < KEY_COUNT ) {
 			currentKeys[ keyCode ] = true;
 		}
-	}
+		
+		if (keyCode == KeyEvent.VK_LEFT) {
+			
+		}
+		
+		if (keyCode == KeyEvent.VK_RIGHT) {
+			
+		}
+
+		if (keyCode == KeyEvent.VK_UP) {
+	
+		}
+
+		if (keyCode == KeyEvent.VK_DOWN) {
+	
+		}//if keys up, down, left, or right are pressed, move cursor
+	}//if key is pressed, return true
 	
 	public synchronized void keyReleased ( KeyEvent e ) {
 		int keyCode = e.getKeyCode();
 		if( keyCode >= 0 && keyCode < KEY_COUNT ) {
 			currentKeys[ keyCode ] = false;
 		}
-	}
+	}//if key is released, return false
 	
 	public void keyTyped( KeyEvent e ) {
 		//unneeded
 	}
+	
+	
 	
 }
