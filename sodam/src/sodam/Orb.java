@@ -10,6 +10,8 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.border.BevelBorder;
 import java.awt.event.KeyAdapter;
+import java.awt.Dimension;
+import java.awt.Cursor;
 
 public class Orb extends JPanel {
 
@@ -24,6 +26,7 @@ public class Orb extends JPanel {
 		panel.setForeground(Color.WHITE);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		panel_1.setBackground(Color.RED);
 		panel_1.setForeground(Color.WHITE);
 		GroupLayout gl_panel = new GroupLayout(panel);
