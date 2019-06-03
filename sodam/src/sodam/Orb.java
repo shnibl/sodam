@@ -58,6 +58,8 @@ public class Orb extends JPanel {
 					.addContainerGap())
 		);
 		setLayout(groupLayout);
+		//the logic behind the chargebars movement
+		private boolean isGoingUp = true;
 		
 		addKeyListener(new KeyAdapter() {
 			@Override
@@ -66,11 +68,19 @@ public class Orb extends JPanel {
 				switch(key)
 				{
 				case KeyEvent.VK_SPACE:
-					if(panel_1.getX() == 1) {
-					panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y+5);
+					if( (panel_1.getY() < panel.getY() ) && (isGoingUp== true) ) {
+					panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y+1);
+					}
+					else if( panel_1.getY() == panel.getY()) {
+						isGoingUp = false;
+						
+					}
+					else if(panel_1.getY() < panel.getY() && isGoingUp ==false) {
+						panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y-1);
+					}
 					break;
 				}
-			}
+			
 		}
 
 	});
