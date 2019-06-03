@@ -59,19 +59,19 @@ public class KeyboardInput implements ActionListener, KeyListener {
 		}
 		
 		if (keyCode == KeyEvent.VK_LEFT) {
-			
+			//cursor x-position + (value here)
 		}
 		
 		if (keyCode == KeyEvent.VK_RIGHT) {
-			
+			//cursor x-position - (value here)
 		}
 
 		if (keyCode == KeyEvent.VK_UP) {
-	
+			//cursor y-position + (value here)
 		}
 
 		if (keyCode == KeyEvent.VK_DOWN) {
-	
+			//cursor y-position - (value here)
 		}//if keys up, down, left, or right are pressed, move cursor
 	}//if key is pressed, return true
 	
