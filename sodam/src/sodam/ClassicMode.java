@@ -46,6 +46,10 @@ public class ClassicMode extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		//Creates players
+		Player player1 = new Player("Player 1", 10);
+        Player player2 = new Player("Player 2", 10);
+		
 		JButton btnBackToMenu = new JButton("Back to Menu");
 		btnBackToMenu.setBounds(0, 0, 111, 23);
 		btnBackToMenu.addActionListener(new ActionListener() {

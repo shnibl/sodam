@@ -56,7 +56,7 @@ public class Menu extends JFrame {
 		JButton btnNewButton = new JButton("Classic Mode");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Create classic mode
+				//Swap to classic mode screen
 				close();
 		        ClassicMode classic = new ClassicMode();
 		        classic.setSize(600, 600);

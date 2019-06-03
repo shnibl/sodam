@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 
 import javax.swing.border.BevelBorder;
+import java.awt.event.KeyAdapter;
 
 public class Orb extends JPanel {
 
@@ -16,7 +17,7 @@ public class Orb extends JPanel {
 	 * Create the panel.
 	 */
 	public Orb() {
-		
+
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), null, null, null));
 		panel.setBackground(Color.WHITE);
@@ -41,30 +42,35 @@ public class Orb extends JPanel {
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(320, Short.MAX_VALUE)
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addGap(320)
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(22))
+					.addContainerGap(22, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(panel, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
 					.addContainerGap())
 		);
 		setLayout(groupLayout);
-
-	}
-	private void spacePressed(java.awt.event.KeyEvent evt) {
-		int key = evt.getKeyCode();
-		switch(key)
-		{
-		case KeyEvent.VK_SPACE:
-			if(panel_1.getLocation().x)
-			panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y+5);
-			break;
+		
+		addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent evt) {
+				int key = evt.getKeyCode();
+				switch(key)
+				{
+				case KeyEvent.VK_SPACE:
+					if(panel_1.getX() == 1) {
+					panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y+5);
+					break;
+				}
+			}
 		}
-	}
+
+	});
 	
+}
 }
