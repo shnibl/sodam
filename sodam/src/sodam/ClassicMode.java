@@ -1,6 +1,7 @@
 package sodam;
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -38,7 +39,7 @@ public class ClassicMode extends JFrame {
 	 * Create the frame.
 	 */
 	public ClassicMode() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -49,8 +50,11 @@ public class ClassicMode extends JFrame {
 		btnBackToMenu.setBounds(0, 0, 111, 23);
 		btnBackToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				
-				System.exit(0);
+				close();
+		        Menu menu = new Menu();
+		        menu.setSize(600, 600);
+		        menu.setResizable(false);
+		        menu.setVisible(true);
 			}
 		});
 		contentPane.add(btnBackToMenu);
@@ -60,5 +64,11 @@ public class ClassicMode extends JFrame {
 		contentPane.add(panel);
 		setTitle("Classic Mode");
 		setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+	}
+	
+	//Method to properly close the window
+	public void close() {
+		WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
 	}
 }
