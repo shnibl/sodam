@@ -15,6 +15,9 @@ public class Dart {
 	private int scoreArea;
 	
 	public Dart() {
+		xMid = frame.getXMid();
+		yMid = frame.getYMid();
+		width = frame.getWidth();
 		//Initialize x and y from the cursor's position
 		
 		//Initialize charge as a multiple between 0 and 2 depending on the charge bar
@@ -22,7 +25,7 @@ public class Dart {
 		//Multiply x1 and x1 by the charge to get x2 and y2
 		
 		//Get the distance from the middle
-		distanceFromMid = calcDistance(xMid, x2, yMid, y2);
+		distanceFromMid = calcDistance(xMid, yMid, x2, y2);
 		//Check to see how many points the player gets from the dart throw
 		scoreArea = areaLanded();
 		
