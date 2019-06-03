@@ -18,6 +18,9 @@ public class ClassicMode extends JFrame {
 	public static final int DEFAULT_WIDTH = 400;
 	public static final int DEFAULT_HEIGHT = 400;
 	private JPanel contentPane;
+	
+	//Dimensions of the bullseye
+	private 
 
 	/**
 	 * Launch the application.
@@ -64,7 +67,7 @@ public class ClassicMode extends JFrame {
 		contentPane.add(btnBackToMenu);
 		
 		BullseyePanel panel = new BullseyePanel();
-		panel.setBounds(46, 34, 303, 303);
+		panel.setBounds(46, 50, 300, 300);
 		contentPane.add(panel);
 		setTitle("Classic Mode");
 		setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
