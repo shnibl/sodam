@@ -8,6 +8,12 @@ public class Dart {
 	private double y2;
 	private double distanceFromMid;
 	
+	private double xMid;
+	private double yMid;
+	private double width;
+	
+	private int scoreArea;
+	
 	public Dart() {
 		//Initialize x and y from the cursor's position
 		
@@ -16,8 +22,9 @@ public class Dart {
 		//Multiply x1 and x1 by the charge to get x2 and y2
 		
 		//Get the distance from the middle
-		distanceFromMid = calcDistance(x1, x2, y1, y2);
+		distanceFromMid = calcDistance(xMid, x2, yMid, y2);
 		//Check to see how many points the player gets from the dart throw
+		scoreArea = areaLanded();
 		
 	}
 	
@@ -26,7 +33,19 @@ public class Dart {
 	}
 	
 	public int areaLanded() {
-		if (panel.getBounds().contains(x,y)) {
+		if (distanceFromMid < 25) {
+			return 0;
+		} else if (distanceFromMid < 50) {
+			return 1;
+		} else if (distanceFromMid < 75) {
+			return 2;
+		} else if (distanceFromMid < 100) {
+			return 3;
+		} else if (distanceFromMid < 125) {
+			return 4;
+		} else if (distanceFromMid < 150) {
+			return 5;
+		} else {
 			return -1;
 		}
 	}
