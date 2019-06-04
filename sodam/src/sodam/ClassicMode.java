@@ -69,10 +69,14 @@ public class ClassicMode extends JFrame {
 		contentPane.add(btnBackToMenu);
 		
 		BullseyePanel panel = new BullseyePanel();
-		panel.setBounds(40, 34, 300, 300);
+		panel.setBounds(128, 137, 300, 300);
 		contentPane.add(panel);
+		
+		Orb panel_1 = new Orb();
+		panel_1.setBounds(141, 173, 517, 251);
+		contentPane.add(panel_1);
 		setTitle("Classic Mode");
-		setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+		setSize(600, 600);
 		
 		width = panel.getWidth();
 		xMid = panel.getX() + (width / 2);

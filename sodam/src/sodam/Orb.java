@@ -11,10 +11,13 @@ import java.awt.event.KeyEvent;
 import javax.swing.border.BevelBorder;
 import java.awt.event.KeyAdapter;
 import java.awt.Dimension;
+import java.awt.EventQueue;
 import java.awt.Cursor;
 
 public class Orb extends JPanel {
 
+	private boolean isGoingUp = true;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -59,15 +62,12 @@ public class Orb extends JPanel {
 		);
 		setLayout(groupLayout);
 		//the logic behind the chargebars movement
-		private boolean isGoingUp = true;
 		
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent evt) {
 				int key = evt.getKeyCode();
-				switch(key)
-				{
-				case KeyEvent.VK_SPACE:
+				if (key == KeyEvent.VK_SPACE) {
 					if( (panel_1.getY() < panel.getY() ) && (isGoingUp== true) ) {
 					panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y+1);
 					}
@@ -78,12 +78,8 @@ public class Orb extends JPanel {
 					else if(panel_1.getY() < panel.getY() && isGoingUp ==false) {
 						panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y-1);
 					}
-					break;
 				}
-			
-		}
-
+			}
 	});
-	
 }
 }
