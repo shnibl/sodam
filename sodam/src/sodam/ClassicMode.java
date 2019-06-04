@@ -23,22 +23,7 @@ public class ClassicMode extends JFrame {
 	private double xMid;
 	private double yMid;
 	private double width;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ClassicMode frame = new ClassicMode();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private int numRings;
 
 	/**
 	 * Create the frame.
@@ -78,9 +63,10 @@ public class ClassicMode extends JFrame {
 		setTitle("Classic Mode");
 		setSize(600, 600);
 		
-		width = panel.getWidth();
 		xMid = panel.getX() + (width / 2);
 		yMid = panel.getY() + (width / 2);
+		width = panel.getWidth();
+		numRings = panel.getNumRings();
 	}
 	
 	public double getXMid() {
@@ -93,6 +79,10 @@ public class ClassicMode extends JFrame {
 	
 	public double width() {
 		return this.width;
+	}
+	
+	public int getNumRings() {
+		return this.numRings;
 	}
 	
 	//Method to properly close the window
