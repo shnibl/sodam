@@ -9,8 +9,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 
 import java.awt.event.*;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 
 public class ClassicMode extends JFrame {
 	/**
@@ -46,7 +44,6 @@ public class ClassicMode extends JFrame {
 	 * Create the frame.
 	 */
 	public ClassicMode() {
-		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -59,8 +56,6 @@ public class ClassicMode extends JFrame {
         Player player2 = new Player("Player 2", 10);
 		
 		JButton btnBackToMenu = new JButton("Back to Menu");
-		//btnBackToMenu.setEnabled(false);
-		btnBackToMenu.setFocusable(false);
 		btnBackToMenu.setBounds(0, 0, 111, 23);
 		btnBackToMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
@@ -73,11 +68,6 @@ public class ClassicMode extends JFrame {
 		});
 		contentPane.add(btnBackToMenu);
 		
-		JLabel cursor = new JLabel("");
-		cursor.setIcon(new ImageIcon("images/cursor.png"));
-		cursor.setBounds(89, 375, 29, 29);
-		contentPane.add(cursor);
-		
 		BullseyePanel panel = new BullseyePanel();
 		panel.setBounds(128, 137, 300, 300);
 		contentPane.add(panel);
@@ -85,39 +75,12 @@ public class ClassicMode extends JFrame {
 		Orb panel_1 = new Orb();
 		panel_1.setBounds(141, 173, 517, 251);
 		contentPane.add(panel_1);
-		
-		JLabel lblPlayerScore = new JLabel("Player 1 Score: " + player1.getScore());
-		lblPlayerScore.setBounds(89, 490, 105, 14);
-		contentPane.add(lblPlayerScore);
-		
-		JLabel lblPlayerScore_1 = new JLabel("Player 2 Score: " + player2.getScore());
-		lblPlayerScore_1.setBounds(367, 490, 93, 14);
-		contentPane.add(lblPlayerScore_1);
 		setTitle("Classic Mode");
 		setSize(600, 600);
 		
 		width = panel.getWidth();
 		xMid = panel.getX() + (width / 2);
 		yMid = panel.getY() + (width / 2);
-		
-		addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent ev) {
-				int keycode = ev.getKeyCode();
-				if (keycode == KeyEvent.VK_W) {
-					cursor.setLocation(cursor.getX(), cursor.getY() - 5);
-				}
-				if (keycode == KeyEvent.VK_A) {
-					cursor.setLocation(cursor.getX() - 5, cursor.getY());
-				}
-				if (keycode == KeyEvent.VK_S) {
-					cursor.setLocation(cursor.getX(), cursor.getY() + 5);
-				}
-				if (keycode == KeyEvent.VK_D) {
-					cursor.setLocation(cursor.getX() + 5, cursor.getY());
-				}
-			}
-		});
 	}
 	
 	public double getXMid() {
