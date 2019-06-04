@@ -8,13 +8,13 @@ import java.awt.*;
 
 class BullseyePanel extends JPanel
 {
+	final int MAX_WIDTH = 300, NUM_RINGS = 5, RING_WIDTH = 25;
    //-----------------------------------------------------------------
    //  Paints a bullseye target.
    //-----------------------------------------------------------------
    public void paintComponent (Graphics page)
    {
       super.paintComponent(page);
-      final int MAX_WIDTH = 300, NUM_RINGS = 5, RING_WIDTH = 25;
       int x = 0, y = 0, diameter;
 
       setBackground (Color.red);
@@ -39,5 +39,9 @@ class BullseyePanel extends JPanel
       // Draw the red bullseye in the center
       page.setColor (Color.red);
       page.fillOval (x, y, diameter, diameter);
+   }
+   
+   public int getNumRings() {
+	   return this.NUM_RINGS;
    }
 }
