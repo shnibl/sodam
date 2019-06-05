@@ -1,4 +1,6 @@
 package sodam;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
 
 public class Dart {
 	private double x1;
@@ -19,11 +21,12 @@ public class Dart {
 	
 	public Dart(double x, double y) {
 		ClassicMode dimensions = new ClassicMode();
+		
 		//Initialize variables
 		xMid = dimensions.getXMid(); //frame.getXMid();
 		yMid = dimensions.getYMid(); //frame.getYMid();
 		width = dimensions.getWidth(); //frame.getWidth();
-		numRings = dimensions.getNumRings(); //frame.getNumRings();
+		numRings = 5; //5 rings on the dartboard
 		ringWidth = (width / 2) / (numRings + 1);
 		
 		

@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
@@ -25,6 +27,10 @@ public class ClassicMode extends JFrame {
 	private double xMid;
 	private double yMid;
 	private double width;
+	private int p1Score;
+	private int p2Score;
+	private ArrayList<JLabel> dartGraphics;
+	private ArrayList<Dart> darts;
 
 	/**
 	 * Launch the application.
@@ -87,11 +93,11 @@ public class ClassicMode extends JFrame {
 		contentPane.add(panel_1);
 		
 		JLabel lblPlayerScore = new JLabel("Player 1 Score: " + player1.getScore());
-		lblPlayerScore.setBounds(89, 490, 105, 14);
+		lblPlayerScore.setBounds(89, 490, 156, 14);
 		contentPane.add(lblPlayerScore);
 		
 		JLabel lblPlayerScore_1 = new JLabel("Player 2 Score: " + player2.getScore());
-		lblPlayerScore_1.setBounds(367, 490, 93, 14);
+		lblPlayerScore_1.setBounds(367, 490, 156, 14);
 		contentPane.add(lblPlayerScore_1);
 		setTitle("Classic Mode");
 		setSize(600, 600);
@@ -104,17 +110,34 @@ public class ClassicMode extends JFrame {
 			@Override
 			public void keyPressed(KeyEvent ev) {
 				int keycode = ev.getKeyCode();
+				// Move Up
 				if (keycode == KeyEvent.VK_W) {
-					cursor.setLocation(cursor.getX(), cursor.getY() - 5);
+					cursor.setLocation(cursor.getX(), cursor.getY() - 10);
 				}
+				//Move Left
 				if (keycode == KeyEvent.VK_A) {
-					cursor.setLocation(cursor.getX() - 5, cursor.getY());
+					cursor.setLocation(cursor.getX() - 10, cursor.getY());
 				}
+				//Move Down
 				if (keycode == KeyEvent.VK_S) {
-					cursor.setLocation(cursor.getX(), cursor.getY() + 5);
+					cursor.setLocation(cursor.getX(), cursor.getY() + 10);
 				}
+				//Move Right
 				if (keycode == KeyEvent.VK_D) {
-					cursor.setLocation(cursor.getX() + 5, cursor.getY());
+					cursor.setLocation(cursor.getX() + 10, cursor.getY());
+				}
+				//Shooting function, adds a dart to the board
+				if (keycode == KeyEvent.VK_M) {
+					JLabel newDart = new JLabel("");
+					newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
+					newDart.setIcon(new ImageIcon("images/p1dart.png"));
+					getContentPane().add(newDart);
+					Dart dart = new Dart(cursor.getX(), cursor.getY());
+					//Adds to player's score
+					player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
+					lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
+					//darts.add(dart);
+					//dartGraphics.add(newDart);
 				}
 			}
 		});
