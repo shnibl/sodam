@@ -1,3 +1,5 @@
+
+
 package sodam;
 
 import javax.swing.JPanel;
@@ -12,16 +14,20 @@ import javax.swing.border.BevelBorder;
 import java.awt.event.KeyAdapter;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Graphics;
 import java.awt.Cursor;
 
 public class Orb extends JPanel {
 
 	private boolean isGoingUp = true;
+	private int x;
+	private int y;
 	
 	/**
 	 * Create the panel.
 	 */
 	public Orb() {
+		setBackground(Color.LIGHT_GRAY);
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(0, 0, 0), null, null, null));
@@ -62,24 +68,34 @@ public class Orb extends JPanel {
 		);
 		setLayout(groupLayout);
 		//the logic behind the chargebars movement
-		
+		/*public static void paint(Graphics g) {
+			g.fillRect(0, 0, 200, 300);
+			repaint();
+		}*/
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent evt) {
 				int key = evt.getKeyCode();
-				if (key == KeyEvent.VK_SPACE) {
+				repaint();
+				if (key == KeyEvent.VK_E) {
+					System.out.println("Key event has been checked");
 					if( (panel_1.getY() < panel.getY() ) && (isGoingUp== true) ) {
 					panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y+1);
+					repaint();
 					}
 					else if( panel_1.getY() == panel.getY()) {
 						isGoingUp = false;
+					repaint();
 						
 					}
 					else if(panel_1.getY() < panel.getY() && isGoingUp ==false) {
 						panel_1.setLocation(panel_1.getLocation().x, panel_1.getLocation().y-1);
+						repaint();
 					}
 				}
 			}
 	});
 }
 }
+
+
