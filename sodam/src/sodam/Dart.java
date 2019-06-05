@@ -42,16 +42,17 @@ public class Dart {
 		distanceFromMid = calcDistance(xMid, yMid, x2, y2);
 		
 		//Check to see how many points the player gets from the dart throw
-		scoreArea = getAreaLanded();
+		scoreArea = areaLanded();
 		score = getScore(scoreArea);
+		System.out.println("You landed in " + scoreArea + " and scored " + score + " points");
 	}
 	
 	public static double calcDistance(double x1, double y1, double x2, double y2) {
 		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}
 	
-	public int getAreaLanded() {
-		for (int i = 0; i <= numRings; i++) {
+	public int areaLanded() {
+		for (int i = 0; i < (numRings + 1); i++) {
 			if (distanceFromMid < ringWidth * (i + 1)) {
 				return i;
 			}
