@@ -16,6 +16,14 @@ public class HowToPlay extends JFrame {
 		JLabel lblPressAndHold = new JLabel("Press and hold the spacebar to charge your throw.");
 		
 		JLabel lblGameEndsAfter = new JLabel("Game ends after each player has thrown 10 darts.");
+		
+		JLabel lblClassicModeRules = new JLabel("Classic Mode Rules");
+		
+		JLabel lblThePlayerWith = new JLabel("The Player with the highest score wins.");
+		
+		JLabel lblSugarRushMode = new JLabel("Sugar Rush Mode Rules");
+		
+		JLabel lblCurrentlyUnderDevelopment = new JLabel("Currently under development, chack back at a later date.");
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -25,7 +33,11 @@ public class HowToPlay extends JFrame {
 						.addComponent(lblSodamDrunkenDarts)
 						.addComponent(lblUseTheArrow)
 						.addComponent(lblPressAndHold)
-						.addComponent(lblGameEndsAfter))
+						.addComponent(lblClassicModeRules)
+						.addComponent(lblGameEndsAfter)
+						.addComponent(lblThePlayerWith)
+						.addComponent(lblSugarRushMode)
+						.addComponent(lblCurrentlyUnderDevelopment))
 					.addContainerGap(329, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
@@ -37,9 +49,17 @@ public class HowToPlay extends JFrame {
 					.addComponent(lblUseTheArrow)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblPressAndHold)
-					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGap(18)
+					.addComponent(lblClassicModeRules)
+					.addGap(18)
 					.addComponent(lblGameEndsAfter)
-					.addContainerGap(464, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblThePlayerWith)
+					.addGap(18)
+					.addComponent(lblSugarRushMode)
+					.addGap(18)
+					.addComponent(lblCurrentlyUnderDevelopment)
+					.addContainerGap(336, Short.MAX_VALUE))
 		);
 		getContentPane().setLayout(groupLayout);
 	}
