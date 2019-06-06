@@ -93,7 +93,7 @@ public class ClassicMode extends JFrame {
 		contentPane.add(panel);
 		
 		Orb panel_1 = new Orb();
-		panel_1.setBounds(141, 173, 517, 251);
+		panel_1.setBounds(450, 112, 100, 350);
 		contentPane.add(panel_1);
 		
 		JLabel lblPlayerScore = new JLabel("Player 1 Score: " + player1.getScore());
