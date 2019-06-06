@@ -35,6 +35,7 @@ public class ClassicMode extends JFrame {
 	private boolean isplayer2turn = false;
 	private int player1shots = 0;
 	private int player2shots = 0;
+	private int totalshots = 0;
 
 	/**
 	 * Launch the application.
@@ -65,8 +66,8 @@ public class ClassicMode extends JFrame {
 		contentPane.setLayout(null);
 		
 		//Creates players
-		Player player1 = new Player("Player 1", 10);
-        Player player2 = new Player("Player 2", 10);
+		Player player1 = new Player("Player 1");
+        Player player2 = new Player("Player 2");
 		
 		JButton btnBackToMenu = new JButton("Back to Menu");
 		//btnBackToMenu.setEnabled(false);
@@ -93,13 +94,15 @@ public class ClassicMode extends JFrame {
 		contentPane.add(panel);
 		
 		Orb panel_1 = new Orb();
-		panel_1.setBounds(141, 173, 517, 251);
+		panel_1.setBounds(450, 112, 100, 350);
 		contentPane.add(panel_1);
 		
+		//Player 1 score display
 		JLabel lblPlayerScore = new JLabel("Player 1 Score: " + player1.getScore());
 		lblPlayerScore.setBounds(89, 490, 156, 14);
 		contentPane.add(lblPlayerScore);
 		
+		//Player 2 score display
 		JLabel lblPlayerScore_1 = new JLabel("Player 2 Score: " + player2.getScore());
 		lblPlayerScore_1.setBounds(367, 490, 156, 14);
 		contentPane.add(lblPlayerScore_1);
@@ -110,6 +113,7 @@ public class ClassicMode extends JFrame {
 		xMid = panel.getX() + (width / 2);
 		yMid = panel.getY() + (width / 2);
 		
+		//Check for keyboard input
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent ev) {
@@ -132,7 +136,35 @@ public class ClassicMode extends JFrame {
 				}
 				//Shooting function, adds a dart to the board
 				if (keycode == KeyEvent.VK_M) {
-					if( (isplayer1turn == true) && (player1shots <11) ) {
+					//Shooting for player 1 for first 10 shots
+					if (totalshots < 10) {
+						//Create dart graphic and dart at cursor location
+						JLabel newDart = new JLabel("");
+						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
+						newDart.setIcon(new ImageIcon("images/p1dart.png"));
+						getContentPane().add(newDart);
+						Dart dart = new Dart(cursor.getX(), cursor.getY());
+						//Adds to player's score and adds to total shots
+						player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
+						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
+						System.out.println("test" + player1shots + ": " + player1.getScore());
+						totalshots++;
+						//Shooting for player 2 for another 10 shots
+					} else if (totalshots > 9 && totalshots < 20) {
+						//Create dart graphic and dart at cursor location
+						JLabel newDart = new JLabel("");
+						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
+						newDart.setIcon(new ImageIcon("images/p1dart.png"));
+						getContentPane().add(newDart);
+						Dart dart = new Dart(cursor.getX(), cursor.getY());
+						//Adds to player's score and adds to total shots
+						player2.setScore(p2Score += dart.getScore(dart.areaLanded()));
+						lblPlayerScore_1.setText("Player 2 Score: " + player2.getScore());
+						System.out.println("test" + player2shots + ": " + player2.getScore());
+						totalshots++;
+					}
+					
+					/*if( (isplayer1turn == true) && (player1shots <10) ) {
 						JLabel newDart = new JLabel("");
 						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
@@ -141,21 +173,24 @@ public class ClassicMode extends JFrame {
 						//Adds to player's score
 						player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
 						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
+						System.out.println("test" + player1shots + ": " + player1.getScore());
 						player1shots++;
 					}
 					if(player1shots > 9) {
 						isplayer2turn = true;
 						isplayer1turn = false;
+						
 					}
-					if( (isplayer2turn == true)&& (player2shots <11) ) {
+					if( (isplayer2turn == true)&& (player2shots <10) ) {
 					JLabel newDart = new JLabel("");
 					newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
 					newDart.setIcon(new ImageIcon("images/p2dart.png"));
 					getContentPane().add(newDart);
-					Dart dart = new Dart(cursor.getX(), cursor.getY());
+					Dart dart2 = new Dart(cursor.getX(), cursor.getY());
 					//Adds to player's score
-					player2.setScore(p2Score += dart.getScore(dart.areaLanded()));
+					player2.setScore(p2Score += dart2.getScore(dart2.areaLanded()));
 					lblPlayerScore_1.setText("Player 2 Score: " + player2.getScore());
+					System.out.println("test" + player2shots + ": " + player2.getScore());
 					player2shots++;
 					//darts.add(dart);
 					//dartGraphics.add(newDart);
@@ -163,7 +198,7 @@ public class ClassicMode extends JFrame {
 					if(player2shots > 9) {
 						isplayer2turn = false;
 						isplayer1turn = false;
-					}
+					}*/
 				}
 			}
 		});
