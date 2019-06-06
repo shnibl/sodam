@@ -34,15 +34,16 @@ public class Orb extends JPanel implements KeyListener {
 		repaint();
 	}
 	
+	public void space() {
+		y += velY;
+		if (y < 0 || y > getHeight() - height) {
+			velY = -velY;
+		}
+	}
+	
 	@Override
 	public void keyPressed(KeyEvent e) {
-		int c = e.getKeyCode();
-		if (c == KeyEvent.VK_SPACE) {
-			y += velY;
-			if (y < 0 || y > getHeight() - height) {
-				velY = -velY;
-			}
-		}
+		
 	}
 	
 	@Override

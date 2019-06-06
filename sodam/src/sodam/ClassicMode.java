@@ -24,8 +24,8 @@ public class ClassicMode extends JFrame {
 	private JPanel contentPane;
 	
 	//Dimensions of the bullseye
-	private int xMid;
-	private int yMid;
+	private double xMid;
+	private double yMid;
 	private double width;
 	private int p1Score;
 	private int p2Score;
@@ -85,7 +85,7 @@ public class ClassicMode extends JFrame {
 		contentPane.add(btnBackToMenu);
 		
 		JLabel cursor = new JLabel("");
-		cursor.setIcon(new ImageIcon("images/cursor.png"));
+		cursor.setIcon(new ImageIcon("sodam/images/cursor.png"));
 		cursor.setBounds(89, 375, 29, 29);
 		contentPane.add(cursor);
 		
@@ -117,6 +117,7 @@ public class ClassicMode extends JFrame {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent ev) {
+				System.out.println(cursor.getX() + " " + cursor.getY());
 				int keycode = ev.getKeyCode();
 				// Move Up
 				if (keycode == KeyEvent.VK_W) {
@@ -133,6 +134,10 @@ public class ClassicMode extends JFrame {
 				//Move Right
 				if (keycode == KeyEvent.VK_D) {
 					cursor.setLocation(cursor.getX() + 10, cursor.getY());
+				}
+				if (keycode == KeyEvent.VK_SPACE) {
+					panel_1.space();
+					System.out.println("Space");
 				}
 				//Shooting function, adds a dart to the board
 				if (keycode == KeyEvent.VK_M) {
@@ -204,11 +209,11 @@ public class ClassicMode extends JFrame {
 		});
 	}
 	
-	public int getXMid() {
+	public double getXMid() {
 		return this.xMid;
 	}
 	
-	public int getYMid() {
+	public double getYMid() {
 		return this.yMid;
 	}
 	

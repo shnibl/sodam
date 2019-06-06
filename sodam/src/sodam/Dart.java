@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 public class Dart {
 	private int x1;
 	private int y1;
-	private double charge;
+	private int charge;
 	private int x2;
 	private int y2;
 	private double distanceFromMid;
@@ -19,12 +19,12 @@ public class Dart {
 	private int scoreArea;
 	private int score;
 	
-	public Dart(double x, double y) {
+	public Dart(int x, int y) {
 		ClassicMode dimensions = new ClassicMode();
 		
 		//Initialize variables
-		xMid = dimensions.getXMid();
-		yMid = dimensions.getYMid();
+		xMid = (int) dimensions.getXMid();
+		yMid = (int) dimensions.getYMid();
 		width = dimensions.getWidth();
 		numRings = 5; //5 rings on the dartboard
 		ringWidth = (width / 2) / (numRings + 1);
@@ -39,7 +39,7 @@ public class Dart {
 		
 		//Multiply x1 and x1 by the charge to get x2 and y2
 		x2 = x1;
-		y2 = charge;
+		y2 = y1 * charge;
 		
 		//Get the distance from the middle
 		distanceFromMid = calcDistance(xMid, yMid, x2, y2);
