@@ -55,8 +55,8 @@ public class Orb extends JPanel implements KeyListener {
 		
 	}
 	
-	public int getCharge() {
-		return this.charge;
+	public void setCharge(Dart d) {
+		d.setY(charge);
 	}
 }
 

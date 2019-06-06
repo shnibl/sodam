@@ -3,15 +3,15 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 public class Dart {
-	private double x1;
-	private double y1;
+	private int x1;
+	private int y1;
 	private double charge;
-	private double x2;
-	private double y2;
+	private int x2;
+	private int y2;
 	private double distanceFromMid;
 	
-	private double xMid;
-	private double yMid;
+	private int xMid;
+	private int yMid;
 	private double width;
 	private int numRings;
 	private double ringWidth;
@@ -80,5 +80,21 @@ public class Dart {
 			default:
 				return 0;
 		}
+	}
+	
+	public int getX() {
+		return this.x1;
+	}
+	
+	public int getY() {
+		return this.y1;
+	}
+	
+	public void setX(int x) {
+		this.x2 = x;
+	}
+	
+	public void setY(int y) {
+		this.y2 = y;
 	}
 }

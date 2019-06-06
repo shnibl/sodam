@@ -24,8 +24,8 @@ public class ClassicMode extends JFrame {
 	private JPanel contentPane;
 	
 	//Dimensions of the bullseye
-	private double xMid;
-	private double yMid;
+	private int xMid;
+	private int yMid;
 	private double width;
 	private int p1Score;
 	private int p2Score;
@@ -204,11 +204,11 @@ public class ClassicMode extends JFrame {
 		});
 	}
 	
-	public double getXMid() {
+	public int getXMid() {
 		return this.xMid;
 	}
 	
-	public double getYMid() {
+	public int getYMid() {
 		return this.yMid;
 	}
 	
