@@ -14,7 +14,7 @@ public class Orb extends JPanel implements KeyListener {
 	public Orb() {
 		setSize(new Dimension(100, 350));
 		setPreferredSize(new Dimension(100, 350));
-		setFocusable(true);
+		setFocusable(false);
 		addKeyListener(this);
 		setLayout(null);
 	}
