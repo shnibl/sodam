@@ -23,9 +23,9 @@ public class Dart {
 		ClassicMode dimensions = new ClassicMode();
 		
 		//Initialize variables
-		xMid = dimensions.getXMid(); //frame.getXMid();
-		yMid = dimensions.getYMid(); //frame.getYMid();
-		width = dimensions.getWidth(); //frame.getWidth();
+		xMid = dimensions.getXMid();
+		yMid = dimensions.getYMid();
+		width = dimensions.getWidth();
 		numRings = 5; //5 rings on the dartboard
 		ringWidth = (width / 2) / (numRings + 1);
 		
@@ -35,11 +35,11 @@ public class Dart {
 		y1 = y;
 		
 		//Initialize charge as a multiple between 0 and 2 depending on the charge bar
-		charge = 1; //placeholder; will eventually be something like chargebar.getCharge();
+		charge = y2; //placeholder; will eventually be something like chargebar.getCharge();
 		
 		//Multiply x1 and x1 by the charge to get x2 and y2
 		x2 = x1;
-		y2 = y1 * charge;
+		y2 = charge;
 		
 		//Get the distance from the middle
 		distanceFromMid = calcDistance(xMid, yMid, x2, y2);
