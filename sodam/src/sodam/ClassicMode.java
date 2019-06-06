@@ -132,7 +132,7 @@ public class ClassicMode extends JFrame {
 				}
 				//Shooting function, adds a dart to the board
 				if (keycode == KeyEvent.VK_M) {
-					if( (isplayer2turn == false) && (player1shots <11) ) {
+					if( (isplayer1turn == true) && (player1shots <11) ) {
 						JLabel newDart = new JLabel("");
 						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
@@ -143,21 +143,26 @@ public class ClassicMode extends JFrame {
 						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
 						player1shots++;
 					}
-					if(player1shots > 10) {
+					if(player1shots > 9) {
 						isplayer2turn = true;
 						isplayer1turn = false;
 					}
 					if( (isplayer2turn == true)&& (player2shots <11) ) {
 					JLabel newDart = new JLabel("");
 					newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
-					newDart.setIcon(new ImageIcon("images/p1dart.png"));
+					newDart.setIcon(new ImageIcon("images/p2dart.png"));
 					getContentPane().add(newDart);
 					Dart dart = new Dart(cursor.getX(), cursor.getY());
 					//Adds to player's score
-					player2.setScore(p1Score += dart.getScore(dart.areaLanded()));
-					lblPlayerScore_1.setText("Player 1 Score: " + player2.getScore());
+					player2.setScore(p2Score += dart.getScore(dart.areaLanded()));
+					lblPlayerScore_1.setText("Player 2 Score: " + player2.getScore());
+					player2shots++;
 					//darts.add(dart);
 					//dartGraphics.add(newDart);
+					}
+					if(player2shots > 9) {
+						isplayer2turn = false;
+						isplayer1turn = false;
 					}
 				}
 			}
