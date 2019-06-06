@@ -89,19 +89,30 @@ public class Menu extends JFrame {
 			}
 		});
 		
+		JButton drawButton = new JButton("Drawing Mode");
+		drawButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				close();
+		        DrawingMode draw = new DrawingMode();
+		        draw.setSize(600, 600);
+		        draw.setResizable(false);
+		        draw.setVisible(true);
+			}
+		});
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
-					.addGap(62)
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap(81, Short.MAX_VALUE)
 					.addComponent(btnNewButton)
-					.addPreferredGap(ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnHowToPlay)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(lblNewLabel)
-							.addGap(44)
-							.addComponent(btnNewButton_1)))
+					.addGap(56)
+					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(drawButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnHowToPlay, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(lblNewLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGap(44)
+					.addComponent(btnNewButton_1)
 					.addGap(69))
 		);
 		gl_panel.setVerticalGroup(
@@ -110,12 +121,13 @@ public class Menu extends JFrame {
 					.addGap(178)
 					.addComponent(btnHowToPlay)
 					.addGap(61)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-							.addComponent(btnNewButton_1)
-							.addComponent(lblNewLabel))
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnNewButton_1)
+						.addComponent(lblNewLabel)
 						.addComponent(btnNewButton))
-					.addContainerGap(254, Short.MAX_VALUE))
+					.addGap(39)
+					.addComponent(drawButton)
+					.addContainerGap(192, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		getContentPane().setLayout(groupLayout);
