@@ -9,7 +9,7 @@ import java.awt.Graphics;
 
 public class Orb extends JPanel implements KeyListener {
 	
-	private int x = 0, y = 0, velY = 10, height = 10;
+	private int x = 0, y = 0, velY = 10, height = 10, charge = 0;
 	
 	public Orb() {
 		setSize(new Dimension(100, 350));
@@ -47,13 +47,17 @@ public class Orb extends JPanel implements KeyListener {
 	
 	@Override
 	public void keyReleased(KeyEvent e) {
-		
+		charge = y + 10;
 	}
 	
 	@Override
 	public void keyTyped(KeyEvent e) {
 		
-	}  
+	}
+	
+	public int getCharge() {
+		return this.charge;
+	}
 }
 
 
