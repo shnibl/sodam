@@ -37,7 +37,7 @@ public class Orb extends JPanel implements KeyListener {
 	
 	public void space() {
 		y += velY;
-		if (y < 0 || y > getHeight() - height) {
+		if (y <= 0 || y >= getHeight() - height) {
 			velY = -velY;
 		}
 	}
@@ -49,7 +49,7 @@ public class Orb extends JPanel implements KeyListener {
 	
 	@Override
 	public void keyReleased(KeyEvent e) {
-		charge = y / getHeight();
+		
 	}
 	
 	@Override

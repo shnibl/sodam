@@ -93,9 +93,10 @@ public class ClassicMode extends JFrame {
 		contentPane.add(cursor);
 		
 		JPanel DartsPanel = new JPanel();
+		DartsPanel.setLayout(null);
 		DartsPanel.setOpaque(false);
 		DartsPanel.setBackground(Color.WHITE);
-		DartsPanel.setBounds(0, 0, 594, 550);
+		DartsPanel.setBounds(0, 0, 600, 600);
 		contentPane.add(DartsPanel);
 		
 		BullseyePanel panel = new BullseyePanel();
@@ -157,13 +158,15 @@ public class ClassicMode extends JFrame {
 					//Shooting for player 1 for first 10 shots
 					if (totalshots < 10) {
 						//Create dart graphic and dart at cursor location
+						Dart dart = new Dart(cursor.getX(), cursor.getY());
+						charge = (dart.getY() * 1.0 / panel_1.getHeight());
+						dart.setNewCoord((DartsPanel.getHeight() + 100) * charge + 87);
+						
 						JLabel newDart = new JLabel("");
+						DartsPanel.add(newDart);
 						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
-						DartsPanel.add(newDart);
-						Dart dart = new Dart(cursor.getX(), cursor.getY());
-						charge = panel_1.getCharge();
-						dart.setNewCoord((DartsPanel.getHeight() + 100) * charge + 87);
+						
 						//Adds to player's score and adds to total shots
 						player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
 						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
@@ -172,17 +175,19 @@ public class ClassicMode extends JFrame {
 						//Shooting for player 2 for another 10 shots
 					} else if (totalshots > 9 && totalshots < 20) {
 						//Create dart graphic and dart at cursor location
+						Dart dart = new Dart(cursor.getX(), cursor.getY());
+						charge = (panel_1.getY() * 1.0 / panel_1.getHeight());
+						dart.setNewCoord((DartsPanel.getHeight() + 100) * charge + 87);
+						
 						JLabel newDart = new JLabel("");
+						DartsPanel.add(newDart);
 						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
-						 DartsPanel.add(newDart);
-						Dart dart = new Dart(cursor.getX(), cursor.getY());
-						charge = panel_1.getCharge();
-						dart.setNewCoord((panel.getHeight() + 100) * charge + 87);
+						
 						//Adds to player's score and adds to total shots
-						player2.setScore(p2Score += dart.getScore(dart.areaLanded()));
-						lblPlayerScore_1.setText("Player 2 Score: " + player2.getScore());
-						System.out.println("test" + player2shots + ": " + player2.getScore());
+						player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
+						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
+						System.out.println("test" + player1shots + ": " + player1.getScore());
 						totalshots++;
 					}
 					
