@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class ClassicMode extends JFrame {
 	/**
@@ -91,6 +92,12 @@ public class ClassicMode extends JFrame {
 		cursor.setBounds(89, 375, 29, 29);
 		contentPane.add(cursor);
 		
+		JPanel DartsPanel = new JPanel();
+		DartsPanel.setOpaque(false);
+		DartsPanel.setBackground(Color.WHITE);
+		DartsPanel.setBounds(0, 0, 594, 550);
+		contentPane.add(DartsPanel);
+		
 		BullseyePanel panel = new BullseyePanel();
 		panel.setBounds(128, 137, 300, 300);
 		contentPane.add(panel);
@@ -153,10 +160,10 @@ public class ClassicMode extends JFrame {
 						JLabel newDart = new JLabel("");
 						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
-						getContentPane().add(newDart);
+						DartsPanel.add(newDart);
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
 						charge = panel_1.getCharge();
-						dart.setNewCoord(panel_1.getHeight() * charge);
+						dart.setNewCoord((panel.getHeight() + 100) * charge + 87);
 						//Adds to player's score and adds to total shots
 						player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
 						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
@@ -168,10 +175,10 @@ public class ClassicMode extends JFrame {
 						JLabel newDart = new JLabel("");
 						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
-						getContentPane().add(newDart);
+						 DartsPanel.add(newDart);
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
 						charge = panel_1.getCharge();
-						dart.setNewCoord(panel_1.getHeight() * charge);
+						dart.setNewCoord((panel.getHeight() + 100) * charge + 87);
 						//Adds to player's score and adds to total shots
 						player2.setScore(p2Score += dart.getScore(dart.areaLanded()));
 						lblPlayerScore_1.setText("Player 2 Score: " + player2.getScore());
