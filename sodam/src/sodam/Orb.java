@@ -7,14 +7,16 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.Graphics;
 
-public class Orb extends JPanel {
+public class Orb extends JPanel implements KeyListener {
 	
 	private int x = 0, y = 0, velY = 10, height = 10;
+	private double charge = 0;
 	
 	public Orb() {
 		setSize(new Dimension(100, 100));
 		setPreferredSize(new Dimension(100, 100));
 		setFocusable(false);
+		addKeyListener(this);
 		setLayout(null);
 	}
 	
@@ -25,7 +27,7 @@ public class Orb extends JPanel {
 	
 	public void paint(Graphics g) {
 		g.setColor(Color.WHITE);
-		g.fillRect(0, 0, this.getWidth(), this.getHeight());
+		g.fillRect(0, 0, getWidth(), getHeight());
 		
 		g.setColor(Color.RED);
 		g.fillRect(x, y, 100, height);
@@ -35,25 +37,28 @@ public class Orb extends JPanel {
 	
 	public void space() {
 		y += velY;
-		if (y <= 0 || y >= getHeight() - height) {
+		if (y < 0 || y > getHeight() - height) {
 			velY = -velY;
 		}
 	}
 	
-	public void setX(int x) {
-		this.x = x;
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
 	}
 	
-	public void setY(int y) {
-		this.y = y;
+	@Override
+	public void keyReleased(KeyEvent e) {
+		charge = y / getHeight();
 	}
 	
-	public int getX() {
-		return this.x;
+	@Override
+	public void keyTyped(KeyEvent e) {
+		
 	}
 	
-	public int getY() {
-		return this.y;
+	public double getCharge() {
+		return this.charge;
 	}
 }
 
