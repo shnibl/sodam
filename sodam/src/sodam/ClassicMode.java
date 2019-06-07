@@ -163,7 +163,7 @@ public class ClassicMode extends JFrame {
 						DartsPanel.add(newDart);
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
 						charge = panel_1.getCharge();
-						dart.setNewCoord((panel.getHeight() + 100) * charge + 87);
+						dart.setNewCoord((DartsPanel.getHeight() + 100) * charge + 87);
 						//Adds to player's score and adds to total shots
 						player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
 						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
