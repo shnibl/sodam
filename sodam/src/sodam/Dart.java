@@ -29,8 +29,8 @@ public class Dart {
 		
 		
 		//Initialize x and y from the cursor's position
-		x1 = x;
-		y1 = y;
+		this.x = x;
+		this.y = y;
 		
 		/*//Initialize charge as a multiple between 0 and 2 depending on the charge bar
 		charge = y2; //placeholder; will eventually be something like chargebar.getCharge();
@@ -94,10 +94,10 @@ public class Dart {
 	}
 	
 	public void setX(int x) {
-		this.x1 = x;
+		this.x = x;
 	}
 	
 	public void setY(int y) {
-		this.y2 = y;
+		this.y = y;
 	}
 }
