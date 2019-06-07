@@ -11,7 +11,7 @@ public class HowToPlay extends JFrame {
 		
 		JLabel lblSodamDrunkenDarts = new JLabel("SODAM Drunken Darts - How to Play");
 		
-		JLabel lblUseTheArrow = new JLabel("Use the Arrow Keys to move the cursor.");
+		JLabel lblUseTheArrow = new JLabel("Use the WASD Keys to move the cursor.");
 		
 		JLabel lblPressAndHold = new JLabel("Press and hold the spacebar to charge your throw.");
 		
@@ -23,7 +23,9 @@ public class HowToPlay extends JFrame {
 		
 		JLabel lblSugarRushMode = new JLabel("Sugar Rush Mode Rules");
 		
-		JLabel lblCurrentlyUnderDevelopment = new JLabel("Currently under development, chack back at a later date.");
+		JLabel lblCurrentlyUnderDevelopment = new JLabel("Currently under development, check back at a later date.");
+		
+		JLabel lblPlayersTakeTurns = new JLabel("Players take turns throwing darts.");
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -34,11 +36,12 @@ public class HowToPlay extends JFrame {
 						.addComponent(lblUseTheArrow)
 						.addComponent(lblPressAndHold)
 						.addComponent(lblClassicModeRules)
+						.addComponent(lblPlayersTakeTurns)
 						.addComponent(lblGameEndsAfter)
 						.addComponent(lblThePlayerWith)
 						.addComponent(lblSugarRushMode)
 						.addComponent(lblCurrentlyUnderDevelopment))
-					.addContainerGap(329, Short.MAX_VALUE))
+					.addContainerGap(298, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -52,6 +55,8 @@ public class HowToPlay extends JFrame {
 					.addGap(18)
 					.addComponent(lblClassicModeRules)
 					.addGap(18)
+					.addComponent(lblPlayersTakeTurns)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblGameEndsAfter)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblThePlayerWith)
@@ -59,7 +64,7 @@ public class HowToPlay extends JFrame {
 					.addComponent(lblSugarRushMode)
 					.addGap(18)
 					.addComponent(lblCurrentlyUnderDevelopment)
-					.addContainerGap(336, Short.MAX_VALUE))
+					.addContainerGap(316, Short.MAX_VALUE))
 		);
 		getContentPane().setLayout(groupLayout);
 	}
