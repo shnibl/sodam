@@ -8,6 +8,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JButton;
 
 public class EnterName {
 
@@ -59,40 +60,60 @@ public class EnterName {
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
+		
+		JButton btnDestroyYourTeeth = new JButton("Destroy your teeth");
+		
+		JLabel lblWhenYoureDone = new JLabel("When you're done, click this button.");
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNameEntryField)
-						.addComponent(lblPleaseEnterYour)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblPlayer)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(10)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblNameEntryField)
+								.addComponent(lblPleaseEnterYour)
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(lblPlayer)
+									.addGap(4)
+									.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(lblPlayer_1)
+									.addGap(4)
+									.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblPlayer_1)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+							.addContainerGap()
+							.addComponent(btnDestroyYourTeeth))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblWhenYoureDone)))
 					.addContainerGap(359, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
+					.addGap(11)
 					.addComponent(lblNameEntryField)
 					.addGap(18)
 					.addComponent(lblPleaseEnterYour)
 					.addGap(75)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblPlayer)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(3)
+							.addComponent(lblPlayer))
 						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(78)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblPlayer_1)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(3)
+							.addComponent(lblPlayer_1))
 						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(323, Short.MAX_VALUE))
+					.addGap(71)
+					.addComponent(lblWhenYoureDone)
+					.addGap(18)
+					.addComponent(btnDestroyYourTeeth)
+					.addContainerGap(185, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}
