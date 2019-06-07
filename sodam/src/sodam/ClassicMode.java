@@ -36,6 +36,8 @@ public class ClassicMode extends JFrame {
 	private int player1shots = 0;
 	private int player2shots = 0;
 	private int totalshots = 0;
+	
+	private double charge;
 
 	/**
 	 * Launch the application.
@@ -153,6 +155,8 @@ public class ClassicMode extends JFrame {
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
 						getContentPane().add(newDart);
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
+						charge = panel_1.getCharge();
+						dart.setNewCoord(panel_1.getHeight() * charge);
 						//Adds to player's score and adds to total shots
 						player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
 						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
@@ -166,6 +170,8 @@ public class ClassicMode extends JFrame {
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
 						getContentPane().add(newDart);
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
+						charge = panel_1.getCharge();
+						dart.setNewCoord(panel_1.getHeight() * charge);
 						//Adds to player's score and adds to total shots
 						player2.setScore(p2Score += dart.getScore(dart.areaLanded()));
 						lblPlayerScore_1.setText("Player 2 Score: " + player2.getScore());

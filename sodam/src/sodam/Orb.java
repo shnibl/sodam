@@ -9,11 +9,12 @@ import java.awt.Graphics;
 
 public class Orb extends JPanel implements KeyListener {
 	
-	private int x = 0, y = 0, velY = 10, height = 10, charge = 0;
+	private int x = 0, y = 0, velY = 10, height = 10;
+	private double charge = 0;
 	
 	public Orb() {
-		setSize(new Dimension(100, 350));
-		setPreferredSize(new Dimension(100, 350));
+		setSize(new Dimension(100, 100));
+		setPreferredSize(new Dimension(100, 100));
 		setFocusable(false);
 		addKeyListener(this);
 		setLayout(null);
@@ -56,8 +57,8 @@ public class Orb extends JPanel implements KeyListener {
 		
 	}
 	
-	public void setCharge(Dart d) {
-		d.setY(charge);
+	public double getCharge() {
+		return this.charge;
 	}
 }
 

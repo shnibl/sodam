@@ -6,7 +6,6 @@ public class Dart {
 	private int x1;
 	private int y1;
 	private int charge;
-	private int x2;
 	private int y2;
 	private double distanceFromMid;
 	
@@ -54,9 +53,12 @@ public class Dart {
 		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}
 	
-	public int getNewCoord
+	public void setNewCoord(double percent) {
+		y2 = (int) (y1 * percent);
+	}
 	
 	public int areaLanded() {
+		distanceFromMid = calcDistance(xMid, yMid, x1, y2);
 		for (int i = 0; i < (numRings + 1); i++) {
 			if (distanceFromMid < ringWidth * (i + 1)) {
 				return i;
@@ -93,7 +95,7 @@ public class Dart {
 	}
 	
 	public void setX(int x) {
-		this.x2 = x;
+		this.x1 = x;
 	}
 	
 	public void setY(int y) {
