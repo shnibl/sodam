@@ -55,7 +55,6 @@ public class Dart {
 	
 	public void setNewCoord(double percent) {
 		y2 = (int) (y1 * percent);
-		System.out.println(x1 + " " + y2);
 	}
 	
 	public int areaLanded() {
