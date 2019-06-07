@@ -53,8 +53,8 @@ public class Dart {
 		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}
 	
-	public void setNewCoord(double percent) {
-		y2 = (int) (y1 * percent);
+	public void setNewCoord(double coord) {
+		y2 = (int) (coord);
 	}
 	
 	public int areaLanded() {

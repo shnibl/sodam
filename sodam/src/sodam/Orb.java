@@ -49,7 +49,7 @@ public class Orb extends JPanel implements KeyListener {
 	
 	@Override
 	public void keyReleased(KeyEvent e) {
-		charge = (y - getY()) / 100;
+		charge = y / getHeight();
 	}
 	
 	@Override
