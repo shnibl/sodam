@@ -34,7 +34,7 @@ public class Dart {
 		x1 = x;
 		y1 = y;
 		
-		//Initialize charge as a multiple between 0 and 2 depending on the charge bar
+		/*//Initialize charge as a multiple between 0 and 2 depending on the charge bar
 		charge = y2; //placeholder; will eventually be something like chargebar.getCharge();
 		
 		//Multiply x1 and x1 by the charge to get x2 and y2
@@ -47,12 +47,14 @@ public class Dart {
 		//Check to see how many points the player gets from the dart throw
 		scoreArea = areaLanded();
 		score = getScore(scoreArea);
-		System.out.println("You landed in " + scoreArea + " and scored " + score + " points");
+		System.out.println("You landed in " + scoreArea + " and scored " + score + " points");*/
 	}
 	
 	public static double calcDistance(double x1, double y1, double x2, double y2) {
 		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}
+	
+	public int getNewCoord
 	
 	public int areaLanded() {
 		for (int i = 0; i < (numRings + 1); i++) {

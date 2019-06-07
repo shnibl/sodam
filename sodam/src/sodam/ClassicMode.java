@@ -94,7 +94,7 @@ public class ClassicMode extends JFrame {
 		contentPane.add(panel);
 		
 		Orb panel_1 = new Orb();
-		panel_1.setBounds(450, 112, 100, 350);
+		panel_1.setBounds(450, 237, 100, 100);
 		contentPane.add(panel_1);
 		
 		//Player 1 score display
