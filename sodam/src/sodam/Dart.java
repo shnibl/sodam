@@ -3,10 +3,9 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 public class Dart {
-	private int x1;
-	private int y1;
+	private int x;
+	private int y;
 	private int charge;
-	private int y2;
 	private double distanceFromMid;
 	
 	private int xMid;
@@ -54,11 +53,11 @@ public class Dart {
 	}
 	
 	public void setNewCoord(double coord) {
-		y2 = (int) (coord);
+		y = (int) (coord);
 	}
 	
 	public int areaLanded() {
-		distanceFromMid = calcDistance(xMid, yMid, x1, y2);
+		distanceFromMid = calcDistance(xMid, yMid, x, y);
 		for (int i = 0; i < (numRings + 1); i++) {
 			if (distanceFromMid < ringWidth * (i + 1)) {
 				return i;
@@ -87,11 +86,11 @@ public class Dart {
 	}
 	
 	public int getX() {
-		return this.x1;
+		return this.x;
 	}
 	
 	public int getY() {
-		return this.y1;
+		return this.y;
 	}
 	
 	public void setX(int x) {
