@@ -85,7 +85,7 @@ public class ClassicMode extends JFrame {
 		contentPane.add(btnBackToMenu);
 		
 		JLabel cursor = new JLabel("");
-		cursor.setIcon(new ImageIcon("sodam/images/cursor.png"));
+		cursor.setIcon(new ImageIcon("images/cursor.png"));
 		cursor.setBounds(89, 375, 29, 29);
 		contentPane.add(cursor);
 		
