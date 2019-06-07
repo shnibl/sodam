@@ -140,7 +140,11 @@ public class ClassicMode extends JFrame {
 					System.out.println("Space");
 				}
 				//Shooting function, adds a dart to the board
-				if (keycode == KeyEvent.VK_M) {
+			}
+			@Override
+			public void keyReleased(KeyEvent evt) {
+				int keycode = evt.getKeyCode();
+				if (keycode == KeyEvent.VK_SPACE) {
 					//Shooting for player 1 for first 10 shots
 					if (totalshots < 10) {
 						//Create dart graphic and dart at cursor location
@@ -168,6 +172,7 @@ public class ClassicMode extends JFrame {
 						System.out.println("test" + player2shots + ": " + player2.getScore());
 						totalshots++;
 					}
+					
 					
 					/*if( (isplayer1turn == true) && (player1shots <10) ) {
 						JLabel newDart = new JLabel("");
@@ -206,6 +211,7 @@ public class ClassicMode extends JFrame {
 					}*/
 				}
 			}
+			
 		});
 	}
 	
