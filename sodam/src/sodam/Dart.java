@@ -102,6 +102,6 @@ public class Dart {
 	}
 
 	public void setY(double y) {
-		y = (int) (y);
+		this.y = (int) (y);
 	}
 }
