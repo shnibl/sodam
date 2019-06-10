@@ -89,7 +89,7 @@ public class ClassicMode extends JFrame {
 		
 		JLabel cursor = new JLabel("");
 		cursor.setIcon(new ImageIcon("images/cursor.png"));
-		cursor.setBounds(89, 375, 29, 29);
+		cursor.setBounds(89, 375, 22, 22);
 		contentPane.add(cursor);
 		
 		JPanel DartsPanel = new JPanel();
@@ -159,12 +159,13 @@ public class ClassicMode extends JFrame {
 					if (totalshots < 10) {
 						//Create dart graphic and dart at cursor location
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
-						charge = (dart.getY() * 1.0 / panel_1.getHeight());
-						dart.setNewCoord((DartsPanel.getHeight() + 100) * charge + 87);
+						charge = ( ((double) panel_1.getRectY() + panel_1.getRectHeight()) / (panel_1.getHeight() / 2) );
+						System.out.println("Charge: " + charge);
+						dart.setNewCoord(dart.getY() * charge );
 						
 						JLabel newDart = new JLabel("");
 						DartsPanel.add(newDart);
-						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
+						newDart.setBounds(cursor.getX() + (cursor.getWidth() / 2), dart.getY() + (cursor.getHeight() / 2), 20, 20);
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
 						
 						//Adds to player's score and adds to total shots
@@ -176,12 +177,12 @@ public class ClassicMode extends JFrame {
 					} else if (totalshots > 9 && totalshots < 20) {
 						//Create dart graphic and dart at cursor location
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
-						charge = (panel_1.getY() * 1.0 / panel_1.getHeight());
-						dart.setNewCoord((DartsPanel.getHeight() + 100) * charge + 87);
+						charge = ( ((double)panel_1.getRectY()) / (panel_1.getHeight() / 2) );
+						dart.setNewCoord(dart.getY() * charge );
 						
 						JLabel newDart = new JLabel("");
 						DartsPanel.add(newDart);
-						newDart.setBounds(cursor.getX(), cursor.getY(), 20, 20);
+						newDart.setBounds(cursor.getX() + (cursor.getWidth() / 2), dart.getY() + (cursor.getHeight() / 2), 20, 20);
 						newDart.setIcon(new ImageIcon("images/p1dart.png"));
 						
 						//Adds to player's score and adds to total shots
