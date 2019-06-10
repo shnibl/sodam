@@ -159,9 +159,9 @@ public class ClassicMode extends JFrame {
 					if (totalshots < 10) {
 						//Create dart graphic and dart at cursor location
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
-						charge = ( ((double) panel_1.getYMid()) / (panel_1.getHeight() / 2) );
+						charge = ( ((double) panel_1.getYMid()) / panel_1.getHeight() );
 						System.out.println("Charge: " + charge);
-						dart.setNewCoord(dart.getY() * charge );
+						dart.setNewCoord( (panel.getHeight() + 100) * charge + 87 + (cursor.getY() - (panel.getY() + panel.getHeight() / 2)));
 						
 						JLabel newDart = new JLabel("");
 						DartsPanel.add(newDart);
@@ -177,9 +177,9 @@ public class ClassicMode extends JFrame {
 					} else if (totalshots > 9 && totalshots < 20) {
 						//Create dart graphic and dart at cursor location
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
-						charge = ( ((double) panel_1.getYMid()) / (panel_1.getHeight() / 2) );
+						charge = ( ((double) panel_1.getYMid()) / panel_1.getHeight() );
 						System.out.println("Charge: " + charge);
-						dart.setNewCoord(dart.getY() * charge );
+						dart.setNewCoord( (panel.getHeight() + 100) * charge + 87 + (cursor.getY() - (panel.getY() + panel.getHeight() / 2)));
 						
 						JLabel newDart = new JLabel("");
 						DartsPanel.add(newDart);
