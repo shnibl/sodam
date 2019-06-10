@@ -31,7 +31,7 @@ public class HowToPlay extends JFrame {
 		
 		JLabel lblSugarRushMode = new JLabel("Sugar Rush Mode Rules");
 		
-		JLabel lblCurrentlyUnderDevelopment = new JLabel("Currently under development, check back at a later date.");
+		JLabel lblCurrentlyUnderDevelopment = new JLabel("Same as classic mode but with random movement.");
 		
 		JLabel lblPlayersTakeTurns = new JLabel("Players take turns throwing darts.");
 		
