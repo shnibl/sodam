@@ -1,10 +1,11 @@
 package sodam;
 
+import java.applet.Applet;
 import java.awt.*;
 
 import javax.swing.*;
+import java.awt.*;
 
-@SuppressWarnings("serial")
 class BullseyePanel extends JPanel
 {
 	final int MAX_WIDTH = 300, NUM_RINGS = 5, RING_WIDTH = 25;

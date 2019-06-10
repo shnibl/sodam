@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
@@ -28,6 +30,10 @@ public class ClassicMode extends JFrame {
 	private double width;
 	private int p1Score;
 	private int p2Score;
+	private ArrayList<JLabel> dartGraphics;
+	private ArrayList<Dart> darts;
+	private boolean isplayer1turn = true;
+	private boolean isplayer2turn = false;
 	private int player1shots = 0;
 	private int player2shots = 0;
 	private int totalshots = 0;
