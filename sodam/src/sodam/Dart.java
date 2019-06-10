@@ -53,6 +53,11 @@ public class Dart {
 		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}
 	
+	//Sets the y value of the dart
+	public void setY(double y) {
+		y = (int) (y);
+	}
+	
 	//Finds which ring the dart landed in and returns an int
 	public int areaLanded() {
 		distanceFromMid = calcDistance(xMid, yMid, x, y);
@@ -99,9 +104,5 @@ public class Dart {
 	
 	public void setY(int y) {
 		this.y = y;
-	}
-
-	public void setY(double y) {
-		y = (int) (y);
 	}
 }

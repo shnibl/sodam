@@ -189,7 +189,7 @@ public class ClassicMode extends JFrame {
 						newDart.setIcon(new ImageIcon("images/p2dart.png"));
 						
 						//Adds to player's score and adds to total shots
-						player2.setScore(p2Score += dart.getScore(dart.areaLanded()));
+						player2.setScore(p1Score += dart.getScore(dart.areaLanded()));
 						lblPlayerScore_1.setText("Player 2 Score: " + player2.getScore());
 						System.out.println("test" + player2shots + ": " + player2.getScore());
 						totalshots++;
