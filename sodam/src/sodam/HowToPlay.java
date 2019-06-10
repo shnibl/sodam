@@ -6,13 +6,13 @@ import java.awt.event.WindowEvent;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-@SuppressWarnings("serial")
 public class HowToPlay extends JFrame {
 
 	public HowToPlay() {

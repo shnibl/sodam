@@ -2,17 +2,31 @@ package sodam;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
+import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
+import javax.swing.JSplitPane;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import java.awt.Panel;
 import java.awt.Toolkit;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 
-@SuppressWarnings("serial")
 public class Menu extends JFrame {
 	
 	private JFrame frame;

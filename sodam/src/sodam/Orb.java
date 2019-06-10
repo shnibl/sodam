@@ -3,9 +3,10 @@ package sodam;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.Graphics;
 
-@SuppressWarnings("serial")
 public class Orb extends JPanel {
 	
 	private int x, velY, height, y, yMid;

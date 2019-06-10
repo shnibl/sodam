@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
@@ -21,6 +23,10 @@ public class DrawingMode extends JFrame {
 	public static final int DEFAULT_HEIGHT = 400;
 	private JPanel contentPane;
 	
+	//Dimensions of the bullseye
+	private double xMid;
+	private double yMid;
+	private double width;
 	/**
 	 * Launch the application.
 	 */
@@ -48,7 +54,11 @@ public class DrawingMode extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		
+		//Creates players
+		Player player1 = new Player("Player 1");
+        Player player2 = new Player("Player 2");
+		
 		JButton btnBackToMenu = new JButton("Back to Menu");
 		//btnBackToMenu.setEnabled(false);
 		btnBackToMenu.setFocusable(false);
