@@ -161,7 +161,7 @@ public class ClassicMode extends JFrame {
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
 						charge = ( ((double) panel_1.getYMid()) / panel_1.getHeight() );
 						System.out.println("Charge: " + charge);
-						dart.setY( (panel.getHeight() + 100) * charge + 87 + (cursor.getY() - (panel.getY() + panel.getHeight() / 2)));
+						dart.setNewCoord( (panel.getHeight() + 100) * charge + 87 + (cursor.getY() - (panel.getY() + panel.getHeight() / 2)));
 						
 						//Creates dart graphic
 						JLabel newDart = new JLabel("");
