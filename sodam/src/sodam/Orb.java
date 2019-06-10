@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.Graphics;
 
-public class Orb extends JPanel implements KeyListener {
+public class Orb extends JPanel {
 	
 	private int x, velY, height, y, yMid;
 	
@@ -15,7 +15,6 @@ public class Orb extends JPanel implements KeyListener {
 		setSize(new Dimension(100, 100));
 		setPreferredSize(new Dimension(100, 100));
 		setFocusable(false);
-		addKeyListener(this);
 		setLayout(null);
 		
 		x = 0;
@@ -49,21 +48,6 @@ public class Orb extends JPanel implements KeyListener {
 		if (y <= 0 || y >= getHeight() - height) {
 			velY = -velY;
 		}
-	}
-	
-	@Override
-	public void keyPressed(KeyEvent e) {
-		
-	}
-	
-	@Override
-	public void keyReleased(KeyEvent e) {
-		
-	}
-	
-	@Override
-	public void keyTyped(KeyEvent e) {
-		
 	}
 	
 	public int getRectX() {
