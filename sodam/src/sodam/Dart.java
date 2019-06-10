@@ -48,14 +48,17 @@ public class Dart {
 		System.out.println("You landed in " + scoreArea + " and scored " + score + " points");*/
 	}
 	
+	//Distance formula
 	public static double calcDistance(double x1, double y1, double x2, double y2) {
 		return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 	}
 	
-	public void setNewCoord(double coord) {
-		y = (int) (coord);
+	//Sets the y value of the dart
+	public void setY(double y) {
+		y = (int) (y);
 	}
 	
+	//Finds which ring the dart landed in and returns an int
 	public int areaLanded() {
 		distanceFromMid = calcDistance(xMid, yMid, x, y);
 		for (int i = 0; i < (numRings + 1); i++) {
@@ -66,6 +69,7 @@ public class Dart {
 		return -1;
 	}
 	
+	//Returns the score based on the score area
 	public int getScore(int scoreArea) {
 		switch (scoreArea) {
 			case 0:
@@ -85,6 +89,7 @@ public class Dart {
 		}
 	}
 	
+	//Getters and Setters
 	public int getX() {
 		return this.x;
 	}

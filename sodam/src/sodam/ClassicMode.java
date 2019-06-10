@@ -157,12 +157,13 @@ public class ClassicMode extends JFrame {
 				if (keycode == KeyEvent.VK_SPACE) {
 					//Shooting for player 1 for first 10 shots
 					if (totalshots < 10) {
-						//Create dart graphic and dart at cursor location
+						//Creates dart object and calculates its coordinates
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
 						charge = ( ((double) panel_1.getYMid()) / panel_1.getHeight() );
 						System.out.println("Charge: " + charge);
 						dart.setNewCoord( (panel.getHeight() + 100) * charge + 87 + (cursor.getY() - (panel.getY() + panel.getHeight() / 2)));
 						
+						//Creates dart graphic
 						JLabel newDart = new JLabel("");
 						DartsPanel.add(newDart);
 						newDart.setBounds(cursor.getX() + (cursor.getWidth() / 2), dart.getY() + (cursor.getHeight() / 2), 20, 20);
@@ -175,12 +176,13 @@ public class ClassicMode extends JFrame {
 						totalshots++;
 						//Shooting for player 2 for another 10 shots
 					} else if (totalshots > 9 && totalshots < 20) {
-						//Create dart graphic and dart at cursor location
+						//Creates dart object and calculates its coordinates
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
 						charge = ( ((double) panel_1.getYMid()) / panel_1.getHeight() );
 						System.out.println("Charge: " + charge);
-						dart.setNewCoord( (panel.getHeight() + 100) * charge + 87 + (cursor.getY() - (panel.getY() + panel.getHeight() / 2)));
+						dart.setY( (panel.getHeight() + 100) * charge + 87 + (cursor.getY() - (panel.getY() + panel.getHeight() / 2)));
 						
+						//Creates dart graphic
 						JLabel newDart = new JLabel("");
 						DartsPanel.add(newDart);
 						newDart.setBounds(cursor.getX() + (cursor.getWidth() / 2), dart.getY() + (cursor.getHeight() / 2), 20, 20);
@@ -237,6 +239,7 @@ public class ClassicMode extends JFrame {
 		});
 	}
 	
+	//Getters
 	public double getXMid() {
 		return this.xMid;
 	}
