@@ -68,12 +68,12 @@ public class Menu extends JFrame {
 		JButton btnNewButton_1 = new JButton("Sugar Rush Mode");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Swap to classic mode screen
+				//Swap to sugar rush mode screen
 				close();
-		        Orb srm = new Orb();
-		        srm.setSize(600, 600);
-		        //srm.setResizable(false);
-		        srm.setVisible(true);
+		        SugarRushMode sugar = new SugarRushMode();
+		        sugar.setSize(600, 600);
+		        sugar.setResizable(false);
+		        sugar.setVisible(true);
 			}
 		});
 		
