@@ -177,18 +177,19 @@ public class ClassicMode extends JFrame {
 					} else if (totalshots > 9 && totalshots < 20) {
 						//Create dart graphic and dart at cursor location
 						Dart dart = new Dart(cursor.getX(), cursor.getY());
-						charge = ( ((double)panel_1.getRectY()) / (panel_1.getHeight() / 2) );
+						charge = ( ((double) panel_1.getRectY() + panel_1.getRectHeight()) / (panel_1.getHeight() / 2) );
+						System.out.println("Charge: " + charge);
 						dart.setNewCoord(dart.getY() * charge );
 						
 						JLabel newDart = new JLabel("");
 						DartsPanel.add(newDart);
 						newDart.setBounds(cursor.getX() + (cursor.getWidth() / 2), dart.getY() + (cursor.getHeight() / 2), 20, 20);
-						newDart.setIcon(new ImageIcon("images/p1dart.png"));
+						newDart.setIcon(new ImageIcon("images/p2dart.png"));
 						
 						//Adds to player's score and adds to total shots
-						player1.setScore(p1Score += dart.getScore(dart.areaLanded()));
-						lblPlayerScore.setText("Player 1 Score: " + player1.getScore());
-						System.out.println("test" + player1shots + ": " + player1.getScore());
+						player2.setScore(p1Score += dart.getScore(dart.areaLanded()));
+						lblPlayerScore_1.setText("Player 2 Score: " + player2.getScore());
+						System.out.println("test" + player2shots + ": " + player2.getScore());
 						totalshots++;
 					}
 					
@@ -229,6 +230,8 @@ public class ClassicMode extends JFrame {
 						isplayer1turn = false;
 					}*/
 				}
+				panel_1.setRectY(panel_1.getHeight() - panel_1.getRectHeight());
+				panel_1.setVelY(Math.abs(panel_1.getVelY()) * -1);
 			}
 			
 		});
