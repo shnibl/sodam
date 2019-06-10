@@ -1,11 +1,8 @@
 package sodam;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
 
 public class Dart {
 	private int x;
 	private int y;
-	private int charge;
 	private double distanceFromMid;
 	
 	private int xMid;
@@ -13,9 +10,6 @@ public class Dart {
 	private double width;
 	private int numRings;
 	private double ringWidth;
-	
-	private int scoreArea;
-	private int score;
 	
 	public Dart(int x, int y) {
 		ClassicMode dimensions = new ClassicMode();
